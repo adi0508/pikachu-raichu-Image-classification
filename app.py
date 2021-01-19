@@ -30,7 +30,10 @@ def predict():
     score = tf.nn.softmax(prediction[0])
     final=np.argmax(score)
     predictions = 'पीकाचू' if final==0 else 'राइचू'
-    color = 'danger' if prediction=='Without Mask' else 'success'
+    if predictions=='पीकाचू':
+        color = 'danger'
+    else: 
+        color = 'warning'
     return render_template('index.html', prediction_text='ये {} है !!' .format(predictions), color = '{}' .format(color))
 
 if __name__ == '__main__':
