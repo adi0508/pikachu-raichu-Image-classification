@@ -6,7 +6,7 @@ from werkzeug.utils import secure_filename
 import os
 
 app = Flask(__name__)
-model = tf.keras.models.load_model('../models/model.h5')
+model = tf.keras.models.load_model('models/model.h5')
 
 @app.route("/")
 def home():
